@@ -93,10 +93,10 @@ const relationalData = {
 
 async function seedUsers(client) {
   try {
-    await client.sql('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
     // Create the "users" table if it doesn't exist
-    const createTable = await client.sql(`
+    const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS users (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         guid UUID NOT NULL,
@@ -109,7 +109,7 @@ async function seedUsers(client) {
         class VARCHAR(255) NOT NULL,
         isContractor BOOLEAN NOT NULL
       );
-    `);
+    `;
 
     console.log(`Created "users" table`);
 
@@ -117,11 +117,11 @@ async function seedUsers(client) {
     const insertedUsers = await Promise.all(
       relationalData.users.map(async (user) => {
         const hashedPassword = await bcrypt.hash(user.password, 10);
-        return client.sql(`
+        return client.sql`
           INSERT INTO users (guid, member_id, ssn, dob, name, email, password, class, isContractor)
           VALUES ('${user.guid}', '${user.member_id}', '${user.ssn}', '${user.dob}', '${user.name}', '${user.email}', '${hashedPassword}', '${user.class}', ${user.isContractor})
           ON CONFLICT (guid) DO NOTHING;
-        `);
+        `;
       }),
     );
 
@@ -139,10 +139,10 @@ async function seedUsers(client) {
 
 async function seedStatements(client) {
   try {
-    await client.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
     // Create the "statements" table if it doesn't exist
-    const createTable = await client.sql(`
+    const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS statements (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         uuid UUID NOT NULL,
@@ -154,18 +154,18 @@ async function seedStatements(client) {
         reserve VARCHAR(255) NOT NULL,
         amount_due VARCHAR(255) NOT NULL
       );
-    `);
+    `;
 
     console.log(`Created "statements" table`);
 
     // Insert data into the "statements" table
     const insertedStatements = await Promise.all(
       relationalData.statements.map(
-        (statement) => client.sql(`
+        (statement) => client.sql`
           INSERT INTO statements (uuid, user_id, benefit_from, work_from, payment_due, total_contribution, reserve, amount_due)
           VALUES ('${statement.uuid}', '${statement.user_id}', '${statement.benefit_from}', '${statement.work_from}', '${statement.payment_due}', '${statement.total_contribution}', '${statement.reserve}', '${statement.amount_due}')
           ON CONFLICT (uuid) DO NOTHING;
-        `),
+        `,
       ),
     );
 
@@ -183,10 +183,10 @@ async function seedStatements(client) {
 
 async function seedVaultDocs(client) {
   try {
-    await client.sql('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
     // Create the "vaultDocs" table if it doesn't exist
-    const createTable = await client.sql(`
+    const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS vaultDocs (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         uuid UUID NOT NULL,
@@ -194,18 +194,18 @@ async function seedVaultDocs(client) {
         category VARCHAR(255) NOT NULL,
         url VARCHAR(255) NOT NULL
       );
-    `);
+    `;
 
     console.log(`Created "vaultDocs" table`);
 
     // Insert data into the "vaultDocs" table
     const insertedVaultDocs = await Promise.all(
       relationalData.vaultDocs.map(
-        (vaultDoc) => client.sql(`
+        (vaultDoc) => client.sql`
           INSERT INTO vaultDocs (uuid, user_id, category, url)
           VALUES ('${vaultDoc.uuid}', '${vaultDoc.user_id}', '${vaultDoc.category}', '${vaultDoc.url}')
           ON CONFLICT (uuid) DO NOTHING;
-        `),
+        `,
       ),
     );
 
@@ -223,10 +223,10 @@ async function seedVaultDocs(client) {
 
 async function seedContributions(client) {
   try {
-    await client.sql('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
     // Create the "contributions" table if it doesn't exist
-    const createTable = await client.sql(`
+    const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS contributions (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         uuid UUID NOT NULL,
@@ -235,18 +235,18 @@ async function seedContributions(client) {
         hours VARCHAR(255) NOT NULL,
         period DATE NOT NULL
       );
-    `);
+    `;
 
     console.log(`Created "contributions" table`);
 
     // Insert data into the "contributions" table
     const insertedContributions = await Promise.all(
       relationalData.contributions.map(
-        (contribution) => client.sql(`
+        (contribution) => client.sql`
           INSERT INTO contributions (uuid, user_id, amount, hours, period)
           VALUES ('${contribution.uuid}', '${contribution.user_id}', '${contribution.amount}', '${contribution.hours}', '${contribution.period}')
           ON CONFLICT (uuid) DO NOTHING;
-        `),
+        `,
       ),
     );
 
@@ -264,9 +264,6 @@ async function seedContributions(client) {
 
 async function main() {
   const client = await db.connect()
-
-  
-    await client.connect();
 
     await seedUsers(client);
     await seedStatements(client);
