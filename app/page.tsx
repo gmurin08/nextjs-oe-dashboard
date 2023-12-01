@@ -1,95 +1,99 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import './main.css'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <div className="hero-container">
+        <div className="hero-img-container">
+          <div className="carousel-container">
+            <div className="carousel-content">
+              <h1>Combined Funds, Inc.</h1>
+              <p>Providing financial services and fund management
+              for the members of IUOE Local 66. Managing the Welfare,
+              Pension, Annuity, and Benefit Funds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-container">
+        <div className="welcome-content">
+          <div className="welcome-header">
+            <h1>Welcome</h1>
+            <div className="rule"></div>
+            <p>Operating Engineers Local 66 Combined Funds Inc. serves
+             the hardworking members of Operating Engineers Local 66.
+              Operating Engineers operate the construction equipment 
+              that builds this country. Through all types of weather
+               and terrain this dedicated group continues to move the 
+               dirt and build the future. The Combined Funds office 
+               maintains multi-employer funds created to serve the needs
+                of the membership.</p>
+          </div>
+        </div>
+      </div>
+      <div className="message-block tan">
+        <div className="message-left message">
+          <div className="message-title">
+            <h1>Important Notice Regarding 1095B Tax Forms</h1>
+          </div>
+          <div className="message-content">
+          As of January 2020, the Internal Revenue Service no longer requires you to file the 1095-B as part of your federal tax return because the tax penalty for failing to meet the individual mandate was eliminated by Congress. Pursuant to the recently passed paperwork reduction act (HR 3797), we will no longer mail the form to you. 
+
+          Have Questions?
+
+          Click the link below for more details:
+
+          1095-B Memo
+          </div>
+        </div>
+        <div className="message-right message">
+        <div className="message-title">
+            <h1>Supporting Members Through Life&apos;s Challenges</h1>
+          </div>
+          <div className="message-content">
+          As of January 2020, the Internal Revenue Service no longer requires you to file the 1095-B as part of your federal tax return because the tax penalty for failing to meet the individual mandate was eliminated by Congress. Pursuant to the recently passed paperwork reduction act (HR 3797), we will no longer mail the form to you. 
+
+          Have Questions?
+
+          Click the link below for more details:
+
+          1095-B Memo
+          </div>
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="message-block">
+        <div className="message-left message">
+          <div className="message-title">
+            <h1>Introducing Sword Virtual Physical Care</h1>
+          </div>
+          <div className="message-content">
+          As of January 2020, the Internal Revenue Service no longer requires you to file the 1095-B as part of your federal tax return because the tax penalty for failing to meet the individual mandate was eliminated by Congress. Pursuant to the recently passed paperwork reduction act (HR 3797), we will no longer mail the form to you. 
+
+          Have Questions?
+
+          Click the link below for more details:
+
+          1095-B Memo
+          </div>
+        </div>
+        <div className="message-right message">
+        <div className="message-title">
+            <h1>Introducing Cancer Navigator</h1>
+          </div>
+          <div className="message-content">
+          As of January 2020, the Internal Revenue Service no longer requires you to file the 1095-B as part of your federal tax return because the tax penalty for failing to meet the individual mandate was eliminated by Congress. Pursuant to the recently passed paperwork reduction act (HR 3797), we will no longer mail the form to you. 
+
+          Have Questions?
+
+          Click the link below for more details:
+
+          1095-B Memo
+          </div>
+        </div>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    
+    </div>
   )
 }
+

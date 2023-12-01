@@ -1,0 +1,102 @@
+
+.top-banner{
+    background-color: var(--tan);
+}
+
+.top-banner-content, .login-form-content, .create-btns-content{
+    padding:2.1vh 6.44vh;
+}
+
+.top-banner-content{
+    width: 500px;
+}
+
+.login-form > label{
+    padding-top: 20px;
+    display: block;
+}
+
+.login-form > input{
+    display: block;
+    background-color: var(--lighter-blue);
+    border: .5px solid var(--blue-border);
+    height:40px;
+    width: 40%;
+ 
+    font-size: 18px;
+}
+
+.link-container{
+    margin-top:20px;
+    
+}
+
+.top-banner-content>h1{
+    color: var(--dark-blue)
+}
+
+.link-container > a{
+    text-decoration: underline;
+    color:var(--light-blue)
+}
+
+.login-form > button{
+    margin-top: 20px;
+    background-color:var(--light-blue);
+    border:none;
+    color: #ffffff;
+    min-width: 150px;
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    height:40px;
+}
+
+.login-form > button:hover{
+    background-color: rgb(32, 77, 161);
+    cursor: pointer;
+}
+
+.create-heading{
+    font-weight: lighter;
+    padding-bottom: 10px;
+}
+
+.btn-container > button{
+    margin-top: 20px;
+    background-color:var(--light-blue);
+    border:none;
+    color: #ffffff;
+    min-width: 150px;
+    width: 350px;
+    padding: 10px 10pxpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    height:40px;
+}
+
+.btn-container > button:hover{
+    background-color: rgb(32, 77, 161);
+    cursor: pointer;
+}
+
+.create-icon{
+    height:30px;
+    filter: invert(100%) sepia(0%) saturate(29%) hue-rotate(42deg) brightness(106%) contrast(107%);
+    padding-right: 20px;
+}
+
+.rule-container{
+    display: flex;
+    justify-content: center;
+}
+
+.rule-1{
+    height: 1px;
+    background-color: rgb(235, 234, 234);
+    width:95%
+}

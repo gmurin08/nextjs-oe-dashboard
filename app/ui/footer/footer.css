@@ -1,0 +1,41 @@
+.top{
+    background-color: var(--tan);
+    display: flex;
+    padding: 1.11vh 4.44vh;
+}
+
+.bottom{
+    padding: 0px 4.44vh 0px 4.44vh;
+}
+
+/* .outer{
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width: 100%;
+} */
+
+.link-tbl{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5vh 4.44vh;
+  
+}
+
+.link-tbl-container{
+    display: flex;
+}
+
+.link-heading{
+    font-weight: bold;
+}
+
+.footer-link a{
+    font-weight: normal;
+    padding: 20px 0px 20px 0px;
+}
+
+.link-tbl-title{
+    padding-bottom:10px;
+}
