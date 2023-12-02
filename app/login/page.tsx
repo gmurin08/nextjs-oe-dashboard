@@ -4,10 +4,10 @@ import './login.css'
 import member_icon from '../ui/img/worker.png'
 import contractor_icon from '../ui/img/team.png'
 import { useFormState, useformStatus } from 'react-dom'
-
+import {authenticate } from '@app/lib/actions'
 export default function Page() {
 
-  const [state, dispatch] = useFormState
+  const [state, dispatch] = useFormState(authenticate,undefined)
   return (<>
   <div className='login-container'>
    {/*Refactor greeting into component*/}
