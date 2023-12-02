@@ -13,9 +13,9 @@ async function dropTables(client){
       DROP TABLE IF EXISTS
       users,statements,vaultdocs,contributions
     ;`
-    console.log("Dropped Tables")
+    console.log("Preparing for seeding..")
   } catch (error) {
-    console.error('Error deleting table:', error);
+    console.error('Error deleting tables ->', error);
     throw error;
   }
 }
