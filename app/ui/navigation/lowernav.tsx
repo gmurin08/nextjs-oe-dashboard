@@ -1,8 +1,14 @@
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import './lowernav.css'
 import logo from '../img/iuoe66-logo.png'
 export default function LowerNav() {
+
+    function handleMobileClick(){
+        console.log("test")
+    }
+    
   return (<>
     <section className='secondary-bar'>
       <div className="logo">
@@ -28,6 +34,11 @@ export default function LowerNav() {
         <div className='navlinks'>
           <Link className="navlink" href={"/resources"}>Member Resources</Link> 
         </div>
+      </div>
+      <div className="hamburger-container" onClick={handleMobileClick}>
+        <div className="bar1"></div>
+        <div className="bar2"></div>
+        <div className="bar3"></div>
       </div>
     </section>
     <div className='greeting-container'>
